@@ -22,7 +22,7 @@ The library has been tested with clang sanitizer and a major code review.
 
 If you want to build on OSX, you have probably already figured out that
 there is no home brew available. But that's ok, use home brew to install
-autotools and an up-to-date gcc. Once autotools is installed:
+autotools. Once autotools is installed:
 
     $ glibtoolize
     $ autoreconf
