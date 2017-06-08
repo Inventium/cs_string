@@ -24,7 +24,7 @@ DISTCLEANFILES = .version.cpp .version.o .build-stamp-*
 
 # Tag the distribution
 dist-hook:
-	echo $(VERSION) > $(distdir)/autotools/.tarball-version	
+	echo $(VERSION) > $(distdir)/autotools/.tarball-version
 	find $(distdir) -name qrc_\*.cpp -exec rm -f '{}' ';'
 
 windows-zip: distdir

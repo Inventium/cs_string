@@ -13,11 +13,28 @@ as UTF-8 or UTF-16, is passed to the CsBasicString template. The following typed
 
 ### System Requirements
 
-To use CsString you will need a C++11 compiler and a C++11 standard library. 
+To use CsString you will need a C++11 compiler and a C++11 standard library.
 
-Currently uses the Autotools build system for building and running the unit test suite. 
-The library has been tested with clang sanitizer and a major code review. 
+Currently uses the Autotools build system for building and running the unit test suite.
+The library has been tested with clang sanitizer and a major code review.
 
+#### Building on (modern) OSX
+
+If you want to build on OSX, you have probably already figured out that
+there is no home brew available. But that's ok, use home brew to install
+autotools and an up-to-date gcc. Once autotools is installed:
+
+    $ glibtoolize
+    $ autoreconf
+    $ ./configure --prefix=$HOME/lib
+    $ make && make install
+
+Once it's finished compiling, you should find
+
+    $ ls bin/lib/
+    libCsString.0.dylib  libCsString.dylib  libCsString.la
+
+There is no static link at the moment.
 
 ### Documentation
 

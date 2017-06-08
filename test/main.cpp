@@ -88,6 +88,7 @@ void test_1()
 
 void test_2()
 {
+#if 1
    printf("\n** Unit Test 2\n");
 
    // CsChar internationalization test
@@ -142,15 +143,16 @@ void test_2()
    printf("\n");
 
 
-   // 
+   //
    CsString::CsString str2(U"ABCD↴");
 
-   printf("\nIn test 2C CsString() is passed a UTF-32 string literal with a UTF \n" 
+   printf("\nIn test 2C CsString() is passed a UTF-32 string literal with a UTF \n"
             "specifier. This calls the constructor which takes a const char32_t *\n");
-           
-   printf("\nUTF-32 string literal ABCD↴ : %s", str2.constData());     
+
+   printf("\nUTF-32 string literal ABCD↴ : %s", str2.constData());
 
    printf("\n\n");
+#endif
 }
 
 void test_3()
@@ -415,10 +417,10 @@ void test_8()
    printf("\nOriginal String (↴ is 3 bytes): %s\n", str1.constData());
 
    // 2
-   printf("\nString - size storage    : %d",   str1.size_storage());
-   printf("\nString - size code points: %d",   str1.size_codePoints());
-   printf("\nString - size            : %d",   str1.size());
-   printf("\nString - length          : %d\n", str1.length());
+   printf("\nString - size storage    : %llu",   static_cast<unsigned long long>(str1.size_storage()));
+   printf("\nString - size code points: %llu",   static_cast<unsigned long long>(str1.size_codePoints()));
+   printf("\nString - size            : %llu",   static_cast<unsigned long long>(str1.size()));
+   printf("\nString - length          : %llu\n", static_cast<unsigned long long>(str1.length()));
 
    if (str1.size_codePoints() != 5 ) {
       ok = false;

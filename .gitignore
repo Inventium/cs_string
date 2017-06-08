@@ -11,6 +11,16 @@ aclocal.m4
 configure
 config.log
 
+# osx
+src/.deps/
+src/.dirstamp
+src/.libs/
+src/lib_libCsString_la-cs_string.lo
+test-suite.log
+test/.deps/
+test/.dirstamp
+test/bin_test-main.o
+
 /bin/
 /docs/
 /lib/
